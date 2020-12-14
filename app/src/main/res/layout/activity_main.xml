@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/Search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/search_icon"
+                android:text="Search:"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="327dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/roundededittext" />
+
+            <Button
+                android:id="@+id/btm_go"
+                android:layout_width="55dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="350dp"
+                android:text="GO" />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/Tracking_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Tarcking number: " />
+
+        <EditText
+            android:id="@+id/edit_Tracking_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/roundededittext" />
+
+        <TextView
+            android:id="@+id/Reference_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Reference number: " />
+
+        <EditText
+            android:id="@+id/edit_Reference_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/roundededittext"/>
+
+        <TextView
+            android:id="@+id/ProvinceId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Province: " />
+
+        <EditText
+            android:id="@+id/edit_ProvinceId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/roundededittext"/>
+
+        <TextView
+            android:id="@+id/DistrictId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="District: " />
+
+        <EditText
+            android:id="@+id/edit_DistrictId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/roundededittext"/>
+
+        <TextView
+            android:id="@+id/VillageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Village: " />
+
+        <EditText
+            android:id="@+id/edit_VillageId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/roundededittext"/>
+
+        <Button
+            android:id="@+id/btm_insertdata"
+            android:text="insertdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btm_getAlldata"
+            android:text="getAlldata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btm_updatedata"
+            android:text="updatedata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btm_deletedata"
+            android:text="deletedata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
