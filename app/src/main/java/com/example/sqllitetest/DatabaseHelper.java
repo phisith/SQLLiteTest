@@ -15,7 +15,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_3 = "Provinceld";
     public static final String COL_4 = "Districtld";
     public static final String COL_5 = "Villageld";
-    private static final int DATABASE_VERSION = 1;
+    public static final String COL_6 = "Tracker_date";
+    public static final String COL_7 = "SubmitDate";
+    private static final int DATABASE_VERSION = 2;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,18 +25,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Tracking_number INTGER,Reference_number TEXT,Provinceld TEXT, Districtld TEXT, Villageld TEXT)");
+        db.execSQL("create table " + TABLE_NAME+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Tracking_number INTGER,Reference_number TEXT,Provinceld TEXT, Districtld TEXT, Villageld TEXT, Tracker_date TEXT, SubmitDate TEXT)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
-        onCreate(db);
+        if(newVersion > oldVersion){
+            db.execSQL("ALTER TABLE "+ TABLE_NAME+ " ADD COLUMN Tracker_date TEXT ");
+            db.execSQL("ALTER TABLE "+TABLE_NAME+ " ADD COLUMN SubmitDate TEXT ");
+        }
+        //db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        //onCreate(db);
 
     }
 
-    public boolean insertData(String Tracking_number, String Reference_number, String Provinceld, String Districtld, String Villageld){
+    public boolean insertData(String Tracking_number, String Reference_number, String Provinceld, String Districtld, String Villageld, String Tracker_date, String SubmitDate){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, Tracking_number);
@@ -42,6 +48,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_3, Provinceld);
         contentValues.put(COL_4, Districtld);
         contentValues.put(COL_5, Villageld);
+        contentValues.put(COL_6, Tracker_date);
+        contentValues.put(COL_7, SubmitDate);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;
@@ -62,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean updateData(String Tracking_number, String Reference_number, String Provinceld, String Districtld, String Villageld){
+    public boolean updateData(String Tracking_number, String Reference_number, String Provinceld, String Districtld, String Villageld, String Tracker_date, String SubmitDate){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, Tracking_number);
@@ -70,6 +78,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_3, Provinceld);
         contentValues.put(COL_4, Districtld);
         contentValues.put(COL_5, Villageld);
+        contentValues.put(COL_6, Tracker_date);
+        contentValues.put(COL_7, SubmitDate);
         db.update(TABLE_NAME, contentValues, "Tracking_number = ? ",new String[] {Tracking_number} );
         return true;
     }
